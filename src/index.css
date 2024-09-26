@@ -1,0 +1,526 @@
+/* Bismillah */
+/* Varibales */
+body {
+  --bg: rgb(255, 255, 255);
+  --text: rgb(0, 0, 0);
+  --root: #e0e0e0;
+  --bgNav: linear-gradient(145deg, #e6e3e3, #f0f0f0);
+  --shdw: 20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+  --brdr: 2px solid rgb(240, 235, 235);
+  --navHover: #c7c6c6;
+  --notHover: #ffc583a1;
+  /* Large */
+  --xl-show: 20% 0% 30% 50%;
+  --xl-hide: 20% 0% 80% 50%;
+  --xl-set: 20% 80% 80% 50%;
+  --xl-row: auto;
+  --xl-vanish: none;
+  --xl-shinavi: block;
+}
+
+body.lm {
+  --text: rgb(255, 255, 255);
+  --bg: rgb(24, 24, 24);
+  --root: #000000;
+  --bgNav: linear-gradient(145deg, #3b3b3b, #292929);
+  --shdw: 0;
+  --brdr: 2px solid rgb(54, 54, 54);
+  --navHover: #1b1b1b;
+  --notHover: #a7763fa1;
+}
+
+body.lm i{
+  color: rgb(189, 184, 169);
+}
+body i{
+  transform: scale(.8);
+}
+
+
+
+/* Normal */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: var(--text);
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+/* Main Two Layout */
+#root {
+  display: flex;
+  height: 100vh;
+  background: var(--root);
+}
+
+.rooter {
+  margin: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  box-shadow: var(--shdw);
+}
+
+#section {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: var(--xl-hide);
+  grid-template-rows: var(--xl-row);
+  transition: all .5s;
+}
+
+
+
+/* Contents */
+#section .nav {
+  display: flex;
+  flex-direction: column;
+  background: var(--bgNav);
+  overflow: hidden;
+}
+
+#section .list {
+  display: flex;
+  flex-direction: column;
+  border-right: var(--brdr);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+#section .note-contents {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+
+/* Nav Contents */
+section header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  border-bottom: var(--brdr);
+}
+
+section section {
+  flex-grow: 1;
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.nottop {
+  padding-top: 15px;
+}
+
+.nottopp {
+  padding-top: 10px;
+}
+
+.count {
+  opacity: .5;
+  margin-left: 20px;
+}
+
+header i {
+  font-size: 26px;
+  transition: all .5s;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+header i:hover:not(i.blnk) {
+  transform: scale(1.1);
+}
+
+section section .head-over {
+  font-size: 20px;
+  font-weight: bold;
+  opacity: .4;
+  margin: 10px 0 10px 0;
+  padding-left: 20px;
+}
+
+
+
+
+/* -------------------------------------------- */
+
+/* Nav Header */
+.nav header{
+  margin-left: 20px;
+} 
+.nav header .arrows {
+  height: 20px;
+  width: 20px;
+  background: #5c924e;
+  border-radius: 555px;
+  transition: all .5s;
+  margin-left: 15px;
+
+}
+
+.nav header .arrows.one {
+  background: #f83232;
+}
+
+.nav header i {
+  margin-left: 40px;
+}
+
+/* list Header */
+.list header i {
+  margin-right: 15px;
+}
+
+/* NoteContent Header */
+.note-contents header i {
+  margin-right: 15px;
+}
+
+.note-contents span {
+  flex-grow: 1;
+}
+
+.note-contents i.blnk {
+  opacity: 0.3;
+}
+
+
+/* _____________________________________ */
+
+/* Nav Content */
+section .nav .nav-list {
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px 5px 20px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+section .nav .nav-list:hover {
+  background: var(--navHover);
+  transform: scale(1.01);
+}
+
+section section .notrout {
+  font-size: 18px;
+}
+
+section .nav .nav-list i {
+  font-size: 26px;
+  margin-right: 15px;
+}
+
+section .nav .nav-list p{
+  display: var(--xl-shinavi);
+}
+
+section .nav .nav-list span {
+  flex-grow: 1;
+}
+
+
+/* List Content */
+section .list .note-list {
+  height: auto;
+  display: grid;
+  max-width: 100%;
+  border-radius: 8px;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  row-gap: 5px;
+  padding: 15px 20px;
+  padding-right: 30px;
+  margin-bottom: 5px;
+  transition: all .5s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+section .list .note-list:hover {
+  background: var(--notHover);
+  transform: scale(1.01);
+}
+
+section .list .note-list .head {
+  grid-area: 1 / 3 / 1 / 1;
+  font-weight: bold;
+  font-size: 18px;
+  width: 90%;
+  overflow: hidden;
+}
+
+section .list .note-list .time {
+  margin-right: 10px;
+  opacity: .5;
+}
+
+section .list .note-list .content {
+  font-weight: bold;
+  opacity: .3;
+  width: 90%;
+  overflow: hidden;
+}
+
+.list span {
+  flex: 1;
+}
+
+.list .note-list input {
+  grid-area: 1 / 3 / 4/ 4;
+  outline: 0;
+  width: 15px;
+}
+
+
+/* Editer Content */
+section .note-contents .date-editor {
+  margin-bottom: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+section .note-contents .inputs {
+  background: transparent;
+  margin-top: 10px;
+  border: 0;
+}
+
+.note-contents .inputs.title {
+  font-family: sans-serif;
+  font-size: 30px;
+  width: 100%;
+  font-weight: bold;
+  outline: 0;
+  resize: none;
+  height: 50px;
+  color: var(--text);
+}
+
+section .note-contents .inputs.dec {
+  font-family: sans-serif;
+  outline: 0;
+  width: 100%;
+  resize: none;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  font-size: 20px;
+  height: calc(100vh - 300px);
+  color: var(--text);
+}
+
+.trash {
+  color: #ff0000;
+
+}
+
+
+
+/* mediaQuery */
+
+@media screen and (max-width:1039px) and (min-width:768px) {
+  body {
+    --xl-show: 30% 0% 0% 70% ;
+    --xl-hide: 30% 0% 70% 50%;
+    --xl-set: 30% 70% 0% 0%;
+    --xl-row: 100vh 100vh;
+    --xl-vanish: block;
+  }
+  /* #section .list{
+  }
+  #section .settings{
+     
+  }*/
+}
+@media screen  and (max-width:768px) {
+  body{
+    --xl-shinavi: none;
+    --xl-show: 20% 0% 0% 70% ;
+    --xl-hide: 20% 0% 80% 50%;
+    --xl-set: 20% 80% 0% 0%;
+    --xl-row: 100vh 100vh;
+    --xl-vanish: block;
+  }
+  section section{
+    padding: 10px;
+  }
+  .nav p{
+    background: red;
+  }
+  section section .head-over{
+    margin: 0;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+  section .nav .nav-list i{
+    margin-right: 0;
+  }
+  .nav-list{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  section .nav .nav-list span{
+    display: none;
+  }
+  .nav header .arrows {
+    height: 10px;
+    width: 10px;
+    margin-left: 3px;
+  }
+  .nav header{
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+  }
+  
+}
+
+#idunund {
+  background: red;
+}
+
+
+
+
+/* Settings */
+
+.settings-div {
+  flex-grow: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: .3;
+  overflow: hidden;
+}
+
+.settings-div p {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  opacity: .5;
+}
+
+.settings-div h1 {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/* Sure setting */
+.settings {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.settings h1 {
+  font-size: 35px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.set-list {
+  min-width: 300px;
+  width: 100%;
+  height: 100px;
+  border-radius: 15px;
+  background: var(--bgNav);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 30px;
+  font-weight: bold;
+}
+
+.set-list .spaner {
+  flex: 1;
+}
+
+
+/* ios Toggle */
+
+.toggle-switch, .toggle-switch .toggle-knob {
+  -moz-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.toggle-switch {
+  height: 30px;
+  width: 55px;
+  display: inline-block;
+  background-color: #ffffff;
+  margin: 2px;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: solid 1px #d2d6de;
+  box-shadow: inset 1px 1px 9px -3px rgba(4, 4, 4, 0.08), 1px 2px 6px -2px rgba(0, 0, 0, 0.01);
+}
+
+.toggle-switch .toggle-knob {
+  width: 28px;
+  height: 26px;
+  display: inline-block;
+  background-color: #ffffff;
+  border: solid 1px rgba(126, 126, 126, 0.07);
+  box-shadow: 0 1px 3px rgba(107, 106, 106, 0.26), 0 5px 1px rgba(107, 106, 106, 0.13);
+  border-radius: 26px;
+  margin: 1px 1px;
+}
+
+.toggle-switch.active {
+  background-color: #77e189;
+  border: solid 1px transparent;
+
+}
+
+.toggle-switch.active .toggle-knob {
+  margin-left: 24px;
+}
+
+
+.inf{
+  animation: infro 3s infinite;
+}
+
+@keyframes infro {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.todo{
+  opacity: .5;
+}
