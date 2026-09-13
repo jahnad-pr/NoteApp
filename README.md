@@ -1,14 +1,17 @@
-# Note/To-Do App 
+# Note App
 
-This app can store notes and it title 
-This is simple and minimal UI interface to manage 
-ad write note with description .
+A simple Note / To-Do app — React + Vite. Create, update, and delete notes with a dark mode toggle.
 
-you can # Create # Update # Write # Delete the notes
+**Live:** https://jahnad-pr.github.io/Note-App/
 
-# Features
-> Dark Mode
+## Run Locally
 
-You can use or visit, here the link >
+```bash
+git clone https://github.com/Jahanad-pr/noteAPP.git
+cd noteAPP
+npm install
+npm run dev
+```
 
-> https://jahnad-pr.github.io/Note-App/
+Open the local URL Vite prints (usually `http://localhost:5173`).
+
